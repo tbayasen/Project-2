@@ -2,6 +2,7 @@
 require('dotenv').config();
 var express = require('express');
 var exphbs = require('express-handlebars');
+var grNode = require('goodreads-api-node');
 
 var db = require('./app/models');
 
@@ -12,6 +13,12 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
+
+// API
+const goodReads = {
+	id: process.env.GOODREADS_ID,
+	secret: process.env.GOODREADS_SECRET
+};
 
 // Handlebars
 app.engine(
@@ -44,5 +51,12 @@ db.sequelize.sync(syncOptions).then(function() {
 		);
 	});
 });
+
+const book = 'Harry Potter';
+var queryURL = 'https://www.goodreads.com/search/' + book + '/id=' + goodReads;
+
+app.get('queryURL'), function() {
+    
+};
 
 module.exports = app;
