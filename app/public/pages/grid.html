@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+
+<body class="green lighten-5">
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel green lighten-4">This div is 12 columns</div>
+        </div>
+
+        <div class="row">
+            <div class="col s4">
+                <div class="card-panel green lighten-4"><i class="medium material-icons">add_a_photo</i> user name
+                    <p><i class="small material-icons">directions_run</i>favorite author</p>
+                    <p><i class="small material-icons">book</i>favorite book</p>
+                    <p><i class="small material-icons">map</i>location</p>
+                    <div class="friends">your friends go here
+                        <div class="row">
+                            <div class="col s4">
+                                <div class="card-panel amber">pal</div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card-panel amber">pal</div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card-panel amber">pal</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4">
+                                <div class="card-panel amber">pal</div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card-panel amber">pal</div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card-panel amber">pal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s8">
+                <div class="card-panel green lighten-4">
+                    <div class="row">
+                        <div class="col s4">
+                            <div class="card-panel amber">book</div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card-panel amber">book</div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card-panel amber">book</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            <div class="card-panel amber">book</div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card-panel amber">book</div>
+                        </div>
+                        <div class="col s4">
+                            <div class="card-panel amber">book</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card-panel amber">look for friends here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <nav>
+        <div class="nav-wrapper  green lighten-4">
+            <a href="" class="brand-logo center orange-text center-align"><i
+                    class="material-icons left">copyright</i>BOOK
+                BUDDIES </a>
+        </div>
+    </nav>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        //FOR PARALLAX
+        $(document).ready(function () {
+            $(".parallax").parallax();
+        });
+        //   $(document).ready(function() {
+        //     $(".sidenav").sidenav();
+        //   });
+        $(".button-collapse").sideNav();
+    </script>
+</body>
+
+</html>
