@@ -1,7 +1,7 @@
 // Require Dependencies
 require('dotenv').config();
+
 var express = require('express');
-var exphbs = require('express-handlebars');
 var grNode = require('goodreads-api-node');
 
 var db = require('./app/models');
@@ -12,22 +12,11 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('public'));   
 
 // API
-const goodReads = {
-	id: process.env.GOODREADS_ID,
-	secret: process.env.GOODREADS_SECRET
-};
-
-// Handlebars
-app.engine(
-	'handlebars',
-	exphbs({
-		defaultLayout: 'main'
-	})
-);
-app.set('view engine', 'handlebars');
+const keys = require('./app/models/keys');
+const gr = new grNode(keys.goodreads);
 
 // Routes
 require('./app/routes/apiRoutes')(app);
@@ -52,11 +41,6 @@ db.sequelize.sync(syncOptions).then(function() {
 	});
 });
 
-const book = 'Harry Potter';
-var queryURL = 'https://www.goodreads.com/search/' + book + '/id=' + goodReads;
-
-app.get('queryURL'), function() {
-    
-};
-
 module.exports = app;
+
+//gr.getBooksByAuthor('175417').then(console.log);
