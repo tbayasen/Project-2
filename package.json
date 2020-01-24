@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint --fix"
+    "test": "eslint --fix",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

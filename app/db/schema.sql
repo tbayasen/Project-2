@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS bookbuddies_db;
-CREATE DATABASE bookbuddies_db;
+DROP DATABASE IF EXISTS exampledb;
+CREATE DATABASE exampledb;
 
-DROP DATABASE IF EXISTS bookbuddies_test;
-CREATE DATABASE bookbuddies_test;
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb;
