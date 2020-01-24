@@ -12,15 +12,17 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static('public'));   
+app.use(express.static(__dirname + '/app/public'));
+// app.use(express.static('public'));
 
 // API
-const keys = require('./app/models/keys');
+const keys = require('./app/config/keys');
 const gr = new grNode(keys.goodreads);
 
 // Routes
 require('./app/routes/apiRoutes')(app);
 require('./app/routes/htmlRoutes')(app);
+require('./app/routes/userRoutes')(app);
 
 var syncOptions = { force: false };
 
