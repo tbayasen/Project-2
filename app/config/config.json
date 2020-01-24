@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "N3wp@55word1424",
-    "database": "exampledb",
+    "password": "root",
+    "database": "bookbuddies_db",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
