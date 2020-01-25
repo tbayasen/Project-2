@@ -8,8 +8,6 @@ var db = require('./app/models');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-var db = require('./app/models');
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + '/app/public'));
@@ -22,6 +20,7 @@ const gr = new grNode(keys.goodreads);
 require('./app/routes/apiRoutes')(app);
 require('./app/routes/htmlRoutes')(app);
 require('./app/routes/userRoutes')(app);
+require('./app/routes/JWTRoute')(app);
 
 var syncOptions = { force: false };
 

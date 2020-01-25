@@ -37,19 +37,4 @@ module.exports = function(app) {
 			res.json(dbBooks);
 		});
 	});
-	const secret = process.env.JWT_SECRET;
-	// generate the JWT
-	function generateToken(req) {
-		console.log(secret);
-		return jwt.sign({
-			auth: 'magic',
-			agent: req.headers['user-agent'],
-			exp: Math.floor(new Date().getTime() / 1000) + 7 * 24 * 60 * 60 // Note: in seconds!
-		}, secret);  // secret is defined in the environment variable JWT_SECRET
-	}
-
-	app.get('/api/users/token', function (req, res) {
-		var token = generateToken(req);
-		res.send(token);
-	});
 };
