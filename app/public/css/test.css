@@ -1,0 +1,9 @@
+.login-btn {
+    float: left;
+    padding-left: 24px;
+}
+
+.submit-btn {
+    float: right;
+    padding-right: 24px;
+}

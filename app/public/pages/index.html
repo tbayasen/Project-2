@@ -16,7 +16,7 @@
 
     <div class="card small green lighten-4">
         <div class="card-image">
-            <img src="../assets/images/librarypic.jpeg" alt="sloth" />
+            <img src="assets/images/librarypic.jpeg" alt="library books" />
             <span class="card-title "></span>
         </div>
         <div class="card-content center-align">
@@ -53,7 +53,7 @@
                             <div class="input-field col s12">
                                 <input id="password" type="password" class="validate">
                                 <label for="password">Password</label>
-                                <button id="submit-signup" class="btn waves-effect waves-light orange" type="submit"
+                                <button id="submit-login" class="btn waves-effect waves-light orange" type="submit"
                                     name="action">Submit
                                     <i class="material-icons">send</i>
                             </div>
@@ -82,12 +82,12 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input id="signup-email" type="email" class="validate">
+                        <label for="signup-email">Email</label>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" type="password" class="validate">
-                                <label for="password">Password</label>
+                                <input id="signup-password" type="password" class="validate">
+                                <label for="signup-password">Password</label>
                                 <button id="submit-signup" class="btn waves-effect waves-light orange" type="submit"
                                     name="action">Submit
                                     <i class="material-icons">send</i> </div>
@@ -127,11 +127,20 @@
                 //Sign-up Button
                 $('#submit-signup').on('click', function () {
                     event.preventDefault();
-                    const username = $('#signup-username').val().trim();
-                    const password = $('#signup-pass').val().trim();
+                    const email = $('#signup-email').val().trim();
+                    const password = $('#signup-password').val().trim();
                     createUser({
-                        name: username,
+                        name: email,
                         password: password
+                    });
+                    $('#submit-login').on('click', function () {
+                        event.preventDefault();
+                        const username = $('#login-username').val().trim();
+                        const password = $('#login-pass').val().trim();
+                        // createUser({
+                        //     name: username,
+                        //     password: password
+                        // });
                     });
                     // localStorage.setItem('username', username);
                     // localStorage.setItem('password', password);
