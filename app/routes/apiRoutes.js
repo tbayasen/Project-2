@@ -1,6 +1,4 @@
 const keys = require('../config/keys');
-const Goodreads = require('goodreads-api-node');
-const gr = new Goodreads(keys.goodreads);
 const db = require('../models');
 var jwt = require('jsonwebtoken');
 

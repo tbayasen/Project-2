@@ -5,21 +5,41 @@ $('document').ready(function () {
 	//Sign-up Button
 	$('#submit-signup').on('click', function () {
 		event.preventDefault();
-		const username = $('#signup-username').val().trim();
-		const password = $('#signup-pass').val().trim();
+		const firstname = $('#first_name').val().trim();
+		const lastname = $('#last_name').val().trim();
+		const email = $('#signup-email').val().trim();
+		const password = $('#signup-password').val().trim();
 
-		createUser({
-			name: username,
+		const createUser = {
+			firstname: firstname,
+			lastname: lastname,
+			email: email,
 			password: password
-		});
+		};
 
-		// localStorage.setItem('username', username);
-		// localStorage.setItem('password', password);
+		$.ajax({
+			method: 'POST',
+			url: '/api/user/signup',
+			data: createUser
+		});
 	});
 
-	//Create a user
-	function createUser(User) {
-		$.post('/api/users', User)
-			.then(console.log(User));
-	}
+	$('#submit-login').on('click', function() {
+		event.preventDefault();
+		const email =  $('#login-email').val().trim();
+		const password = $('#login-password').val().trim();
+
+		const loginUser = {
+			email: email,
+			password: password
+		};
+
+		$.ajax({
+			method: 'POST',
+			url: '/api/user/login',
+			data: loginUser
+		});
+
+		console.log('You\'re in!');
+	});
 });

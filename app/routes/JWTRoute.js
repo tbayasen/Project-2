@@ -16,6 +16,12 @@ module.exports = function (app) {
 
 	app.get('/api/users/token', function (req, res) {
 		var token = generateToken(req);
+		// if(window.localStorage) {
+		// 	localStorage.setItem('JWT', token);
+		// }
+		// else{
+		// 	console.log('Local Storage is not supported');
+		// }
 		res.send(token);
 	});
     
