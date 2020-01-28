@@ -38,8 +38,8 @@ $('document').ready(function () {
 			method: 'POST',
 			url: '/api/user/login',
 			data: loginUser
+		}).then(function() {
+			document.location.replace('/dashboard');
 		});
-
-		console.log('You\'re in!');
 	});
 });
