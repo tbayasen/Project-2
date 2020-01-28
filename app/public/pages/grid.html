@@ -36,11 +36,14 @@
 
         <div class="row">
             <div class="col s12 m6 l4">
-                <div class="card-panel green lighten-4"><i class="medium material-icons">add_a_photo</i> user name
+                <div class="card-panel green lighten-4"><img src="../assets/images/profilepic.png" alt="profile pic"
+                        class="circle name"> user name
                     <hr>
-                    <p><i class="small material-icons">directions_run</i>favorite author</p>
-                    <p><i class="small material-icons">book</i>favorite book</p>
-                    <p><i class="small material-icons">map</i>location</p>
+                    <p><img src="../assets/images/authors.png" alt="author" class="circle info">favorite author</p>
+                    <p><img src="../assets/images/book.png" alt="book" class="circle info">
+                        favorite book</p>
+                    <p><img src="../assets/images/location.png" alt="location" class="circle info">
+                        location</p>
                     <hr>
                     <div class="orange-text friends">
                         <h4>FRIENDS</h4>
@@ -103,7 +106,18 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <div class="card-panel amber">look for friends here</div>
+                            <div class="carousel">
+                                <a class="carousel-item" href="#"><img src="../assets/images/cheetara.png"> Janel | 2.0
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/gargoyle.png"> Tyrone | 1.5
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/joaquin.png"> Joaquin | 3.6
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/goodall.png"> Jessica | 1.2
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/coffee.png"> Brian | 2.2
+                                    mi</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -127,21 +141,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script>
-        $('#search').keypress(function(event) {
+        $('#search').keypress(function (event) {
             if (event.keyCode === 13) {
                 const query = $('#search').val().trim();
-            console.log(query);
-            localStorage.setItem('searchQuery', query);
-            const current = window.location.href;
-            location.assign("/temp");
+                console.log(query);
+                localStorage.setItem('searchQuery', query);
+                const current = window.location.href;
+                location.assign("/temp");
             }
         })
 
+        // var instance = M.Carousel.getInstance(elem);
 
-        // submit.addEventListener("click", function(event) {
-        //     var searchBook = $('#search').val().trim();
-        //     console.log(searchBook);
-        // })
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
 
     </script>
 </body>
