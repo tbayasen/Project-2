@@ -1,7 +1,7 @@
 require('dotenv').config();
+const nodeLs = require('node-localstorage');
 
 var express = require('express');
-var grNode = require('goodreads-api-node');
 
 var db = require('./app/models');
 
@@ -15,7 +15,6 @@ app.use(express.static(__dirname + '/app/public'));
 
 // API
 const keys = require('./app/config/keys');
-const gr = new grNode(keys.goodreads);
 
 require('./app/routes/apiRoutes')(app);
 require('./app/routes/htmlRoutes')(app);
@@ -30,5 +29,3 @@ db.sequelize.sync().then(function () {
 });
 
 module.exports = app;
-
-//gr.getBooksByAuthor('175417').then(console.log);
