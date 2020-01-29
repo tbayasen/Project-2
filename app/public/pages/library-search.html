@@ -117,11 +117,12 @@ function renderSearchItem(){
         url: `/api/books/${searchItem}`
     }).then(function(resData){
         console.log(resData);
-        for (var i=0; i<5; i++) {
+        for (var i=0; i<6; i++) {
         var cardDiv = $("<div>");
         var img = $("<img>");
         var imgDiv = $("<div>");
             
+            img.addClass('query-img hoverable')
             cardDiv.addClass('col s4')
             imgDiv.addClass('card-image')
             img.attr('src', resData[i].Image);
