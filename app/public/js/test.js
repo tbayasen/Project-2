@@ -24,9 +24,9 @@ $('document').ready(function () {
 		});
 	});
 
-	$('#submit-login').on('click', function() {
+	$('#submit-login').on('click', function () {
 		event.preventDefault();
-		const email =  $('#login-email').val().trim();
+		const email = $('#login-email').val().trim();
 		const password = $('#login-password').val().trim();
 
 		const loginUser = {
@@ -34,12 +34,34 @@ $('document').ready(function () {
 			password: password
 		};
 
-		$.ajax({
+		fetch('/api/user/login', {
 			method: 'POST',
-			url: '/api/user/login',
-			data: loginUser
-		}).then(function() {
+			body: JSON.stringify(loginUser),
+			headers: { 'Content-Type': 'application/json' }
+		}).then(function () {
 			document.location.replace('/dashboard');
-		});
+		}).catch(
+			err => console.log(err)
+		); 
+
+		// $.ajax({
+		// 	method: 'POST',
+		// 	url: '/api/user/login',
+		// 	data: loginUser
+		// })
+		// 	.then(function () {
+		// 		document.location.replace('/dashboard');
+		// 	});
 	});
 });
+
+// 	$.ajax({
+// 		method: 'POST',
+// 		url: '/api/user/login',
+// 		data: loginUser
+// 	});
+// });
+// 	.then(
+// 		document.location.replace('/dashboard'));
+// });
+// });

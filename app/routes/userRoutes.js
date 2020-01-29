@@ -2,6 +2,8 @@
 const { User } = require('../models');
 var jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const path = require('path');
+const withAuth = require('./withAuth');
 
 module.exports = function (app) {
 	// Get all examples
@@ -12,9 +14,21 @@ module.exports = function (app) {
 	// 	});
 	// });
 
-	app.get('/dashboard', (req, res) => {
-		res.json('You have been logged in!');
+	app.get('/api/user', (req, res) => {
+
 	});
+
+	// app.get('/dashboard', async function (req, res) {
+	// 	// console.log(req);
+	// 	await User.findOne({ 
+	// 		where: { 
+	// 			email: req.params.email 
+	// 		}}).then(
+	// 		user => {
+	// 			console.log(user);
+	// 		});
+	// 	res.sendFile(path.join(__dirname, '../public/pages/grid.html'));
+	// });
 
 	//Add user data to database && hash password
 	app.post('/api/user/signup', (req, res) => {
@@ -42,6 +56,7 @@ module.exports = function (app) {
 								email: user.email
 							};
 							console.log(payload);
+							res.status(200).json(payload.id);
 						});
 					});
 				});
@@ -49,28 +64,25 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post('/api/user/login', (req, res) => {
+	app.post('/api/user/login', async (req, res) => {
 		const email = req.body.email;
 		const password = req.body.password;
-
-		User.findOne({ where: { email } }).then(user => {
-			if (!user) {
-				var errors = {};
-				errors.email = 'No Account Found';
-				return res.status(404).json(errors);
-			}
+		const user = await User.findOne({
+			where: { email: req.body.email }
+		}).then(user => {
 			bcrypt.compare(password, user.password).then(isMatch => {
 				if (isMatch) {
-					console.log('in');
+					console.log('You\'re in!');
 					const payload = {
 						id: user.id,
-						email: user.email
+						username: user.email
 					};
-					res.status(200).json(payload.id);
+					req.session.userId = payload.id;
+					req.session.username = payload.username;
+					// res.status(200).json(payload.id);
+					console.log(req.session.userId);
 				} else {
-					let errors = {};
-					errors.password = 'Password is incorrect';
-					res.status(500).json(errors);
+					console.log('Password is incorrect!');
 				}
 			});
 
@@ -82,7 +94,21 @@ module.exports = function (app) {
 				maxAge: 1000 * 60 * 60 * 24 * 14
 			});
 
-			res.json(user);
+			res.send(user);
+		});
+	});
+
+	app.get('/dashboard', async (req, res) => {
+		User.findOne({ where: { id: req.session.userId } }).then(user => {
+			if (!user) {
+				console.log('User not found');
+			} else {
+				console.log('You\'re in!');
+				console.log(req.body.email);
+			}
+		}).catch(err => {
+			console.log(err);
+			res.redirect('/');
 		});
 	});
 };

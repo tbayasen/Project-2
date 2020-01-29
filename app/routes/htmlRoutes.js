@@ -1,5 +1,5 @@
-var db = require('../models');
 var path = require('path');
+const { User } = require('../models');
 
 module.exports = function (app) {
 	// Load index page
@@ -7,12 +7,12 @@ module.exports = function (app) {
 		res.sendFile(path.join(__dirname, '../public/pages/index.html'));
 	});
 
-	app.get('/dashboard', function (req, res) {
-		res.sendFile(path.join(__dirname, '../public/pages/grid.html'));
-	});
-
 	app.get('/account/edit', function (req, res) {
 		res.sendFile(path.join(__dirname, '../public/pages/profile-edit.html'));
+	});
+
+	app.get('/temp', function (req, res) {
+		res.sendFile(path.join(__dirname, '../public/pages/temp.html'));
 	});
 
 	// Load example page and pass in an example by id
