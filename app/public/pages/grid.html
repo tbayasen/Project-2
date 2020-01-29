@@ -21,9 +21,9 @@
                 <div class="nav-wrapper green lighten-4">
                     <a href="#" class="brand-logo center orange-text">BOOK BUDDIES</a>
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="sass.html">Library</a></li>
-                        <li><a href="badges.html">Buddies</a></li>
-                        <li><a href="collapsible.html">Profile</a></li>
+                        <li><a href="./library-search.html">Find Books</a></li>
+
+
 
                     </ul>
                     <div id="nav-mobile" class="right input-field col">
@@ -37,29 +37,51 @@
         <div class="row">
             <div class="col s12 m6 l4">
                 <div class="card-panel green lighten-4">
-                    <div class="user-info row">
-                        <div class="user-pic col s4">
-                            <img class="circle hoverable friend" src="../assets/images/mufasa.png" alt="mufasa">
-                        </div>
-                        <div class="username-pic col s4">
-                            <p class="username orange-text darken-1">username</p>
-                        </div>
-                        <div class="edit-icon col s4">
-                            <a href='#edit-profile-modal'>
-                                <i id='profile-edit' class='small material-icons edit-icon'>edit</i>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn-floating modal-trigger orange right"
+                        href="./profile-edit.html"><i class="material-icons tiny">create</i></a>
 
+                    <!-- Modal Structure
+                    <div id="edit-page" class="modal">
+                        <div class="modal-content">
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="first_name" type="text" class="validate">
+                                            <label for="first_name">First Name</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="last_name" type="text" class="validate">
+                                            <label for="last_name">Last Name</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="location" type="text" class="validate">
+                                            <label for="location">Location</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="favorite_book" type="text" class="validate">
+                                            <label for="favorite_book">Favorite Book</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="favorite_author" type="text" class="validate">
+                                            <label for="favorite_author">Favorite Author</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>  
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">submit</a>
+                            </div>
+                        </div> -->
 
+                    <img src="../assets/images/profilepic.png" alt="profile pic" class="circle name"> Brian Tyrone
                     <hr>
-                    <div class="favorite-items">
-                        <p><i class="small material-icons">directions_run</i>favorite author </p>
-                        <p><i class="small material-icons">book</i>favorite book
-                        </p>
-                        <p><i class="small material-icons">map</i>location</p>
-                    </div>
-
+                    <p><img src="../assets/images/authors.png" alt="author" class="circle info">favorite author</p>
+                    <p><img src="../assets/images/book.png" alt="book" class="circle info">
+                        favorite book</p>
+                    <p><img src="../assets/images/location.png" alt="location" class="circle info">
+                        location</p>
                     <hr>
                     <div class="orange-text friends">
                         <h4>FRIENDS</h4>
@@ -122,7 +144,23 @@
                     </div>
                     <div class="row">
                         <div class="col s12">
-                            <div class="card-panel amber">look for friends here</div>
+                            <div class="carousel">
+                                <a class="carousel-item" href="#"><img src="../assets/images/cheetara.png"> Janel |
+                                    2.0
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/gargoyle.png"> Tyrone |
+                                    1.5
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/joaquin.png"> Joaquin |
+                                    3.6
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/goodall.png"> Jessica |
+                                    1.2
+                                    mi</a>
+                                <a class="carousel-item" href="#"><img src="../assets/images/coffee.png"> Brian |
+                                    2.2
+                                    mi</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,5 +196,5 @@
 
     <script type="text/javascript" src="./js/dashboard.js"></script>
 </body>
-            
+
 </html>

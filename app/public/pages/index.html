@@ -14,11 +14,12 @@
 <body class="green lighten-4">
     <h1 class="orange-text center-align">BOOK BUDDIES</h1>
 
-    <div class="card small green lighten-4">
-        <div class="card-image">
-            <img src="assets/images/librarypic.jpeg" alt="library books" />
-            <span class="card-title "></span>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="./assets/images/librarypic.jpeg" alt="library books">
         </div>
+    </div>
+    <div class="section green lighten-4">
         <div class="card-content center-align">
             <!-- test -->
             <p>
@@ -31,94 +32,89 @@
             </button>
             <button id="open-signup" data-target="signup-modal" class="btn green lighten-4 orange-text modal-trigger">
                 <i class="material-icons left orange-text">create</i>SIGN UP
-            </button id="open-login">
+            </button>
+
+        </div>
+    </div>
+
+    <!-- MODAL -->
+
+    <!-- LOGIN -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
             <div class="row">
-                <div class="input-field col s6">
-                    <input id="search" type="text" class="validate">
-                    <label class="active" for="search"><i class="material-icons left">search</i>Search</label>
-                </div>
-            </div>
-        </div>
-
-        <!-- MODAL -->
-
-        <!-- LOGIN -->
-        <div id="login-modal" class="modal">
-            <div class="modal-content">
-                <div class="row">
-                    <form action="" method="POST" class="input-field col s12">
-                        <input id="login-email" type="text" class="validate">
-                        <label for="login-email">Email</label>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="login-password" type="password" class="validate">
-                                <label for="login-password">Password</label>
-                                <button id="submit-login" class="btn waves-effect waves-light orange" type="submit"
-                                    name="action">Submit
-                                    <i class="material-icons">send</i>
-                            </div>
+                <form action="" method="POST" class="input-field col s12">
+                    <input id="login-email" type="text" class="validate">
+                    <label for="login-email">Email</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="login-password" type="password" class="validate">
+                            <label for="login-password">Password</label>
+                            <button id="submit-login" class="btn waves-effect waves-light orange" type="submit"
+                                name="action">Submit
+                                <i class="material-icons">send</i>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
-        <!-- SIGNUP -->
-        <div id="signup-modal" class="modal">
-            <form action="" method="POST" class="modal-content">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="first_name" type="text" class="validate">
-                                <label for="first_name">First Name</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="last_name" type="text" class="validate">
-                                <label for="last_name">Last Name</label>
-                            </div>
+    <!-- SIGNUP -->
+    <div id="signup-modal" class="modal">
+        <form action="" method="POST" class="modal-content">
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="signup-email" type="email" class="validate">
-                        <label for="signup-email">Email</label>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="signup-password" type="password" class="validate">
-                                <label for="signup-password">Password</label>
-                                <button id="submit-signup" class="btn waves-effect waves-light orange" type="submit"
-                                    name="action">Submit
-                                    <i class="material-icons">send</i> </div>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="signup-email" type="email" class="validate">
+                    <label for="signup-email">Email</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="signup-password" type="password" class="validate">
+                            <label for="signup-password">Password</label>
+                            <button id="submit-signup" class="btn waves-effect waves-light orange" type="submit"
+                                name="action">Submit
+                                <i class="material-icons">send</i> </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <!-- *** -->
-        <div class="parallax-container">
-            <div class="parallax">
-                <img src="../assets/images/librarypic.jpeg" />
             </div>
+        </form>
+    </div>
+    <!-- *** -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="./assets/images/librarypic.jpeg" />
         </div>
-        <nav>
-            <div class="nav-wrapper  green lighten-4">
-                <a href="" class="brand-logo center orange-text center-align"><i
-                        class="material-icons left">copyright</i>BOOK
-                    BUDDIES </a>
+    </div>
+    <nav>
+        <div class="nav-wrapper  green lighten-4">
+            <a href="" class="brand-logo center orange-text center-align"><i
+                    class="material-icons left">copyright</i>BOOK
+                BUDDIES </a>
 
-            </div>
-        </nav>
+        </div>
+    </nav>
 
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-        <!-- Jquery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <!--JavaScript at end of body for optimized loading-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-        <script type='text/javascript' src="./js/test.js"></script>
+    <script type='text/javascript' src="./js/test.js"></script>
 </body>
 
 </html>

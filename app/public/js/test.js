@@ -1,5 +1,5 @@
 $('document').ready(function () {
-	$('parallax').parallax();
+	$('.parallax').parallax();
 	$('.modal').modal();
 
 	//Sign-up Button
@@ -54,14 +54,3 @@ $('document').ready(function () {
 		// 	});
 	});
 });
-
-// 	$.ajax({
-// 		method: 'POST',
-// 		url: '/api/user/login',
-// 		data: loginUser
-// 	});
-// });
-// 	.then(
-// 		document.location.replace('/dashboard'));
-// });
-// });

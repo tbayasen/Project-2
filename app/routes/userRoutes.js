@@ -106,9 +106,11 @@ module.exports = function (app) {
 				console.log('You\'re in!');
 				console.log(req.body.email);
 			}
-		}).catch(err => {
-			console.log(err);
-			res.redirect('/');
 		});
+		res.sendFile(path.join(__dirname, '../public/pages/grid.html'));
 	});
+	// }).catch(err => {
+	// 	console.log(err);
+	// 	// res.redirect('/');
+	// });
 };
