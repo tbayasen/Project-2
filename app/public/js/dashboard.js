@@ -2,6 +2,10 @@ $('document').ready(function () {
 	$('.carousel').carousel();
 	$('.modal').modal();
 
+	// const ID = req.session.Id;
+	// const useremail = req.session.username;
+	// console.log('Info: ' + ID + ',' + useremail);
+
 	$('#search-input').keypress(function (event) {
 		if (event.keyCode === 13) {
 			const query = $('#search-input').val().trim();
