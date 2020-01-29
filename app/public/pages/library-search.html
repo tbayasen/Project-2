@@ -21,9 +21,9 @@
                 <div class="nav-wrapper green lighten-4">
                     <a href="#" class="brand-logo center orange-text">BOOK BUDDIES</a>
                     <ul id="nav-mobile" class="left hide-on-med-and-down orange-text">
-                        <li><a href="./grid.html">My Page</a></li>
+                        <li><a href="/grid.html">My Page</a></li>
 
-                        <li><a href="./profile-edit.html">Edit Profile</a></li>
+                        <li><a href="/profile-edit.html">Edit Profile</a></li>
 
                     </ul>
                     <div id="nav-mobile" class="right input-field col">
@@ -68,11 +68,8 @@
                 <!-- LIBRARY CONTENTS -->
                 <div class="row">
                     <div id="body-content" class="col s12">
-                            <h4 class="book-title">Book Title</h4>
+                            <h4 class="book-title"></h4>
                             <div class="card horizontal">
-                                <div class="card-image book-cover">
-                                    <img id="testImg" src="">
-                                </div>
                                 <div class="card-stacked">
                                     <div class="card-action">
                                         <a href="#">Add to library</a>
@@ -120,7 +117,7 @@ function renderSearchItem(){
         url: `/api/books/${searchItem}`
     }).then(function(resData){
         console.log(resData);
-        for (var i=0; i<6; i++) {
+        for (var i=0; i<5; i++) {
         var cardDiv = $("<div>");
         var img = $("<img>");
         var imgDiv = $("<div>");
@@ -131,8 +128,8 @@ function renderSearchItem(){
             $(imgDiv).append(img);
             $(cardDiv).append(imgDiv);
             $('#body-content').append(cardDiv);
-
         }
+        $('.book-title').html('Search results for: ' + localStorage.getItem('searchQuery'));
     })
 }
         });
