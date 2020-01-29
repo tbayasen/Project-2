@@ -7,8 +7,8 @@ module.exports = function (app) {
 		res.sendFile(path.join(__dirname, '../public/pages/grid.html'));
 	});
 
-	app.get('/temp', function (req, res) {
-		res.sendFile(path.join(__dirname, '../public/pages/temp.html'));
+	app.get('/search', function (req, res) {
+		res.sendFile(path.join(__dirname, '../public/pages/library-search.html'));
 	});
 	// Load example page and pass in an example by id
 	app.get('/example/:id', function (req, res) {
