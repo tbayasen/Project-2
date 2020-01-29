@@ -2,7 +2,7 @@ $('document').ready(function () {
 	$('.carousel').carousel();
 	$('.modal').modal();
 
-	// const ID = req.session.Id;
+	// const ID = req.session.Id;SSS
 	// const useremail = req.session.username;
 	// console.log('Info: ' + ID + ',' + useremail);
 
