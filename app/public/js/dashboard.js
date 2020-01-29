@@ -1,19 +1,16 @@
 $('document').ready(function () {
-	// $('#edit-profile-btn').on('click', function() {
-	//     //get user info and display on modal
-
-	//     //allow user to change user info and update database
-
-	// });
-    
-
-	$('#search-input').keypress(function(event) {
+	$('.carousel').carousel();
+	$('.modal').modal();
+	
+	$('#search').keypress(function (event) {
 		if (event.keyCode === 13) {
-			const query = $('#search-input').val().trim();
+			const query = $('#search').val().trim();
 			console.log(query);
 			localStorage.setItem('searchQuery', query);
 			const current = window.location.href;
-			location.assign('/temp');
+			location.assign('/search');
 		}
 	});
+
+	// var instance = M.Carousel.getInstance(elem);
 });

@@ -9,7 +9,7 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <h1 id="resData"></h1>
 </body>
 
 <script>
@@ -25,7 +25,8 @@
                 type: 'GET',
                 url: `/api/books/${searchItem}`
             }).then(function(resData){
-                console.log(resData)
+                console.log(resData);
+                $('#resData').html(resData[0].Title);
             })
         }
 

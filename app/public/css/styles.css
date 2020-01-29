@@ -35,3 +35,8 @@
 .input-field {
   z-index: 99;
 }
+
+.query-img {
+  width: 150px;
+  height: 200px;
+}
