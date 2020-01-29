@@ -1,8 +1,8 @@
 {
   "name": "project-2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Find and borrow books from friends!",
+  "main": "index.html",
   "scripts": {
     "test": "eslint --fix",
     "start": "node server.js"
