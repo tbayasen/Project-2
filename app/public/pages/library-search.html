@@ -121,12 +121,15 @@ function renderSearchItem(){
         var cardDiv = $("<div>");
         var img = $("<img>");
         var imgDiv = $("<div>");
+        var descrip = $("<h6>");
             
+            descrip.html(resData[i].Title);
             img.addClass('query-img hoverable')
             cardDiv.addClass('col s4')
             imgDiv.addClass('card-image')
             img.attr('src', resData[i].Image);
             $(imgDiv).append(img);
+            $(cardDiv).append(descrip);
             $(cardDiv).append(imgDiv);
             $('#body-content').append(cardDiv);
         }
