@@ -79,8 +79,8 @@ module.exports = function (app) {
 					};
 					req.session.userId = payload.id;
 					req.session.username = payload.username;
-					// res.status(200).json(payload.id);
-					console.log(req.session.userId);
+					console.log('id:' + req.session.userId);
+					res.send(200);
 				} else {
 					console.log('Password is incorrect!');
 				}
@@ -93,24 +93,20 @@ module.exports = function (app) {
 				httpOnly: true,
 				maxAge: 1000 * 60 * 60 * 24 * 14
 			});
-
-			res.send(user);
 		});
 	});
 
-	app.get('/dashboard', async (req, res) => {
+	app.get('/dashboard', withAuth, (req, res) => {
+		console.log('session: ' + JSON.stringify(req.session));
 		User.findOne({ where: { id: req.session.userId } }).then(user => {
 			if (!user) {
 				console.log('User not found');
 			} else {
 				console.log('You\'re in!');
-				console.log(req.body.email);
+				res.sendFile(path.join(__dirname, '../public/pages/grid.html'));
 			}
+
+			
 		});
-		res.sendFile(path.join(__dirname, '../public/pages/grid.html'));
 	});
-	// }).catch(err => {
-	// 	console.log(err);
-	// 	// res.redirect('/');
-	// });
 };

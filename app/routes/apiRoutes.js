@@ -16,7 +16,7 @@ if (typeof localStorage === 'undefined' || localStorage === null) {
 
 }
 
-  
+
 
 let headers = {
 
@@ -28,7 +28,7 @@ let headers = {
 
 
 
-module.exports = function(app) {
+module.exports = function (app) {
 
 	// Get all examples
 
@@ -44,7 +44,7 @@ module.exports = function(app) {
 
 
 
-	app.get('/api/books/:searchQuery',  function (req, res) {
+	app.get('/api/books/:searchQuery', function (req, res) {
 
 		const searchQuery = req.params.searchQuery;
 
@@ -52,19 +52,19 @@ module.exports = function(app) {
 
 
 
-		axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}:keyes&key=` + apiKey).then(function(data){
+		axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}:keyes&key=` + apiKey).then(function (data) {
 			var book = [];
-			for (var i = 0; i<data.data.items.length; i++) {
+			for (var i = 0; i < data.data.items.length; i++) {
 				var queryBook = {
 					Title: data.data.items[i].volumeInfo.title,
-				 Author: data.data.items[i].volumeInfo.authors,
-				 Description: data.data.items[i].volumeInfo.description,
-				 Image: data.data.items[i].volumeInfo.imageLinks.thumbnail
+					Author: data.data.items[i].volumeInfo.authors,
+					Description: data.data.items[i].volumeInfo.description,
+					Image: data.data.items[i].volumeInfo.imageLinks.thumbnail
 				};
 				book.push(queryBook);
 			}
 			res.json(book);
-		}); 
+		});
 
 	});
 
