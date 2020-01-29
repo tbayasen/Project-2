@@ -1,10 +1,14 @@
 $('document').ready(function () {
 	$('.carousel').carousel();
 	$('.modal').modal();
-	
-	$('#search').keypress(function (event) {
+
+	// const ID = req.session.Id;
+	// const useremail = req.session.username;
+	// console.log('Info: ' + ID + ',' + useremail);
+
+	$('#search-input').keypress(function (event) {
 		if (event.keyCode === 13) {
-			const query = $('#search').val().trim();
+			const query = $('#search-input').val().trim();
 			console.log(query);
 			localStorage.setItem('searchQuery', query);
 			const current = window.location.href;

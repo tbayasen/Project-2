@@ -24,6 +24,11 @@ app.use(express.static(__dirname + '/app/public'));
 app.use(cookieParser());	
 app.use(session(sess));
 
+if (app.get('env') === 'production') {
+	app.set('trust proxy', 1); // trust first proxy
+	sess.cookie.secure = true; // serve secure cookies
+}
+
 // API
 const keys = require('./app/config/keys');
 
